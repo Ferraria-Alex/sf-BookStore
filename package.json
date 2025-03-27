@@ -1,0 +1,28 @@
+{
+  "name": "bookstoresymfony",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ferraria-Alex/sf-BookStore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ferraria-Alex/sf-BookStore/issues"
+  },
+  "homepage": "https://github.com/Ferraria-Alex/sf-BookStore#readme",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^14.2.1"
+  }
+}
