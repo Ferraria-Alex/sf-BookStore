@@ -20,7 +20,8 @@ jobs:
         uses: shogo82148/actions-setup-mysql@v1
         with:
           mysql-version: "9.0"
-          user: "root"
+          user: "test"
+          password: ""
 
       - name: Install Dependencies!
         run: composer install
