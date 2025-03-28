@@ -33,6 +33,9 @@ jobs:
       - name: Create Database!
         run: php bin/console doctrine:database:create
 
+      - name: Install maker-bundle!
+        run: composer require symfony/maker-bundle 
+
       - name: Make Migration! 
         run: php bin/console make:migration
 
