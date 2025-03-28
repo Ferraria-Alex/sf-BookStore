@@ -43,7 +43,7 @@ jobs:
         run: npm install
 
       - name: Start server!
-        run: symfony serve
+        run: php bin/console serve
 
       - name: Run Cypress
         run: npm run cypress:run
