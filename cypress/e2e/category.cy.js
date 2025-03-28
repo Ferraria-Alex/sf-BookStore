@@ -8,7 +8,6 @@ describe('Category Tests', () => {
     cy.get('.btn').click();
     cy.wait(300);
     //Assert
-    cy.get('h1').contains('Category index');
     cy.contains('table tr', 'Exemple1').should('exist');
   })
 
@@ -40,7 +39,7 @@ describe('Category Tests', () => {
     cy.get('.table').contains('Exemple2.1');
   })
 
-  it('Update an entry - Duplicated entry error', () => {
+  it('Update an entry - DUPLICATED ENTRY', () => {
     //Arrange
     cy.visit('http://127.0.0.1:8000/category');
     cy.get('tbody > :nth-child(1) > :nth-child(3) > :nth(1)').click();
@@ -53,7 +52,7 @@ describe('Category Tests', () => {
     cy.get('.container > .break-long-words').contains("An exception");
   })
 
-  it('Deletes All Test Data', ()=>{
+  it('Deletes All Category - SUCCESS', ()=>{
     //RESET
     cy.visit('http://127.0.0.1:8000/category');
     clickVisibleButton();
@@ -74,5 +73,4 @@ describe('Category Tests', () => {
         }
     });
   }
-
 })

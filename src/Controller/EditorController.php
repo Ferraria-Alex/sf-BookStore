@@ -25,20 +25,27 @@ final class EditorController extends AbstractController
     #[Route('/new', name: 'app_editor_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
+        $msg = "";
         $editor = new Editor();
         $form = $this->createForm(EditorType::class, $editor);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($editor);
-            $entityManager->flush();
 
-            return $this->redirectToRoute('app_editor_index', [], Response::HTTP_SEE_OTHER);
+            if(!empty($editor->getName())){
+                $entityManager->persist($editor);
+                $entityManager->flush();
+
+                return $this->redirectToRoute('app_editor_index', [], Response::HTTP_SEE_OTHER);
+            }
+
+            $msg = "Empty Data";
         }
 
         return $this->render('editor/new.html.twig', [
             'editor' => $editor,
             'form' => $form,
+            'msg' => $msg
         ]);
     }
 
@@ -64,7 +71,7 @@ final class EditorController extends AbstractController
 
         return $this->render('editor/edit.html.twig', [
             'editor' => $editor,
-            'form' => $form,
+            'form' => $form
         ]);
     }
 

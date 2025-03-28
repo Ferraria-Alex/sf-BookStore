@@ -7,5 +7,7 @@
 
     {{ include('editor/_form.html.twig') }}
 
+    <p id="error_msg">{{ msg }}</p>
+
     <a href="{{ path('app_editor_index') }}">back to list</a>
 {% endblock %}
