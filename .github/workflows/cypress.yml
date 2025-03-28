@@ -31,7 +31,7 @@ jobs:
         run: composer install
 
       - name: Create Database!
-        run: symfony console d:d:c
+        run: php bin\console doctrine:database:create
 
       - name: Make Migration! 
         run: symfony console make:migration
