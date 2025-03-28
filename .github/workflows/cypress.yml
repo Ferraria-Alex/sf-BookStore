@@ -6,4 +6,5 @@ on:
 jobs:
   E2E-Test:
     runs-on: ubuntu-latest
-    
+    steps:
+      - uses: actions/checkout@v4
