@@ -21,16 +21,16 @@ jobs:
         with:
           mysql-version: "9.0"
           user: "test"
-          password: ""
+          password: "1234"
 
       - name: Install Dependencies!
         run: composer install
 
       - name: Create Database!
-        run: symfony d:d:c
+        run: symfony console d:d:c
 
       - name: Make Migration! 
-        run: symfony make:migration
+        run: symfony console make:migration
 
       - name: Apply Migration!
-        run: symfony d:m:m
+        run: symfony console d:m:m
