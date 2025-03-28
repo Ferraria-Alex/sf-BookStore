@@ -35,3 +35,9 @@ jobs:
 
       - name: Apply Migrations!
         run: php bin/console doctrine:migrations:migrate
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+
+      - name: Install node dependencies!
+        run: npm install
