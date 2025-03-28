@@ -23,6 +23,9 @@ jobs:
           user: "test"
           password: "1234"
 
+      - name: Setup Test in .env!
+        run: echo "APP_ENV=test" >> .env.test
+
       - name: Install Dependencies!
         run: composer install
 
