@@ -15,7 +15,7 @@ jobs:
         with:
           php-version: "8.3"
           tools: composer:v2 
-          extensions: php-bin/console, sodium
+          extensions: mbstring, intl, pdo_mysql, sodium
 
       - name: Set up MYSQL!
         uses: shogo82148/actions-setup-mysql@v1
@@ -25,7 +25,7 @@ jobs:
           password: "1234"
 
       - name: Setup Test in .env!
-        run: echo "APP_ENV=test" >> .env.test
+        run: echo "APP_ENV=test" >> .env
 
       - name: Install Dependencies!
         run: composer install
