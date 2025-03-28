@@ -13,9 +13,9 @@ jobs:
       - name: Install PHP Version!
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.3.14"
+          php-version: "8.3"
           tools: composer:v2 
-          extensions: php-bin/console sodium
+          extensions: php-bin/console, sodium
 
       - name: Set up MYSQL!
         uses: shogo82148/actions-setup-mysql@v1
