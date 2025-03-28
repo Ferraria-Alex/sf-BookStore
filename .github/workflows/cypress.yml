@@ -41,3 +41,8 @@ jobs:
 
       - name: Install node dependencies!
         run: npm install
+
+      - name: Run Cypress
+        run: npm run cypress:run
+      
+      
